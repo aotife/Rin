@@ -2,7 +2,7 @@ name: Deploy
 
 on:
   push:
-    branches:
+    分支:
       - dev
       - main
       - fix/*
@@ -25,7 +25,9 @@ jobs:
 
       - name: Set up Bun
         uses: oven-sh/setup-bun@v1
-
+        with:
+        bun-version: 1.2.13
+    
       - name: Deploy
         env: # Or as an environment variable
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID  }}
